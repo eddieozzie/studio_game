@@ -1,13 +1,15 @@
-def get_time()
-	Time.new.strftime("%H:%M:%S")
+class Player
+	def initialize(name, health=100)
+		@name = name.capitalize
+		@health = health 
+	end
+
+	def say_hello()
+		"I'm #{@name} with a health of #{@health}"
+	end
 
 end
 
-def say_hello(name, health=100)
-	"I'm #{name.capitalize} with a health of #{health} as #{get_time}"
-end
-
-puts say_hello("larry", 60)
-puts say_hello("curly", 125)
-puts say_hello("moe")
-puts say_hello("shemp", 90)
+player1 = Player.new("bob")
+puts player1.inspect
+puts player1.say_hello
