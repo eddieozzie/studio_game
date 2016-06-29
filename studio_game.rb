@@ -19,7 +19,11 @@ class Player
 	end
 
 	def to_s()
-		"I'm #{@name} with a health of #{@health}"
+		"I'm #{@name} with a health of #{@health} and a score of #{score}"
+	end
+
+	def score()
+		health + @name.length
 	end
 
 
