@@ -8,6 +8,10 @@ class Player
 		@health = health 
 	end
 
+	def name=(new_name)
+		@name = new_name.capitalize
+	end
+
 	def blam()
 		@health -=10
 		puts "#{@name} just got blammed!"
