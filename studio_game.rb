@@ -48,7 +48,7 @@ class Game
 	end
 
 	def play()
-		puts "There are #{@players.count} players in #{@titles}"
+		puts "There are #{@players.count} players in #{@title}"
 		@players.each do |player|
 			puts player
 		end
@@ -71,7 +71,6 @@ knuckleheads = Game.new("Knuckleheads")
 knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
-knuckleheads.add_player(player4)
 knuckleheads.play
 
 
