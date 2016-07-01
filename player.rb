@@ -30,6 +30,10 @@ class Player
 		health + @name.length
 	end
 
+	def strong?
+		@health > 150
+	end
+
 end
 
 

@@ -5,6 +5,8 @@ describe Player do
 	before do
 		@inital_health = 150
 		@player = Player.new("larry", @inital_health)
+		$stdout = StringIO.new
+
 	end
 
 	it "has a capitalized name"  do
@@ -31,6 +33,30 @@ describe Player do
 	it "decreases health by 10 when blammed" do
 		@player.blam
 		@player.health.should == @inital_health - 10
+	end
+
+	context 'with health greater than 150' do
+		before do
+			@inital_health = 175
+			@player = Player.new("larry", @inital_health)
+		end
+
+		it 'player is strong' do
+			@player.should be_strong
+		end
+
+	end
+
+	context 'with health less than 100' do
+		before do 
+			@inital_health = 90
+			@player = Player.new("larry", @inital_health)
+		end
+
+		it 'player is weak' do
+			@player.should_not be_strong
+		end
+
 	end
 
 end
