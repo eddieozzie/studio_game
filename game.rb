@@ -16,8 +16,26 @@ class Game
 	end
 
 	def play()
+
+		puts "There are #{@players.size} players in #{@title}: "
+		
 		@players.each do |player|
-			player.w00t
+			puts player
+		end
+		
+		@players.each do |player|
+			die = Die.new
+
+			case die.roll 
+			when 1..2
+				player.blam
+			when 3..4 
+				puts "#{player.name} was skipped"
+			else 
+				player.w00t
+			end
+
+			puts player
 		end
 	end
 
