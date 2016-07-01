@@ -1,4 +1,5 @@
 require_relative 'player'
+require_relative 'die'
 
 class Game
 
@@ -15,14 +16,8 @@ class Game
 	end
 
 	def play()
-		puts "There are #{@players.count} players in #{@title}"
-		@players.each do |player|
-			puts player
-		end
 		@players.each do |player|
 			player.w00t
-			player.w00t
-			player.blam
 		end
 	end
 
