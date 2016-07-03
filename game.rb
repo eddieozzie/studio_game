@@ -47,7 +47,13 @@ class Game
 		wimpy_players.each do |player| 
 			puts "#{player.name} (#{player.health})"
 		end
-		
+			
+		@players.sort.each do |player|
+			puts player.name.ljust(30, ".").concat(player.score.to_s)
+		end
+
+
+
 	end
 
 
