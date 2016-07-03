@@ -38,13 +38,18 @@ class Game
 	end
 
 	def print_stats 
-		strong, weak = @players.partition {|player| player.strong?}
+		strong_players, wimpy_players = @players.partition {|player| player.strong?}
 
-		puts "There are #{strong.count} strong players"
-		puts strong
+		puts "#{strong_players.count} strong players:"
+		strong_players.each do |player|
+			puts "#{player.name} (#{player.health})"
+		end
 
-		puts "There are #{weak.count} weak players"
-		puts weak
+		puts "#{wimpy_players.count} wimpy players:"
+		wimpy_players.each do |player| 
+			puts "#{player.name} (#{player.health})"
+		end
+		
 	end
 
 
