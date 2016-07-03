@@ -17,6 +17,11 @@ class Game
 		@players << player
 	end
 
+	def total_points
+		@players.reduce(0) {|sum, player| sum + player.points}
+
+	end
+
 	def play(rounds)
 
 		treasures = TreasureTrove::TREASURES
@@ -48,6 +53,8 @@ class Game
 
 	def print_stats 
 		strong_players, wimpy_players = @players.partition {|player| player.strong?}
+
+		puts "\n#{total_points} total points from treasure found"
 
 		@players.sort.each do |player|
 			puts "\n#{player.name}'s point totals:"
