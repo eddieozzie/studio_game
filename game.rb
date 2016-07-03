@@ -34,6 +34,17 @@ class Game
 			end
 		end
 		
+		print_stats
+	end
+
+	def print_stats 
+		strong, weak = @players.partition {|player| player.strong?}
+
+		puts "There are #{strong.count} strong players"
+		puts strong
+
+		puts "There are #{weak.count} weak players"
+		puts weak
 	end
 
 

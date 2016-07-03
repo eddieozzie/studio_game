@@ -31,7 +31,7 @@ class Player
 	end
 
 	def strong?
-		@health > 150
+		@health > 100
 	end
 
 end
