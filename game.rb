@@ -69,7 +69,7 @@ class Game
 
 		puts "#{wimpy_players.count} wimpy players:"
 		wimpy_players.each do |player| 
-			puts "#{playerser.name} (#{player.health})"
+			puts "#{player.name} (#{player.health})"
 		end
 
 		@players.sort.each do |player|
