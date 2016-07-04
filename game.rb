@@ -22,6 +22,25 @@ class Game
 
 	end
 
+	def load_players(file)
+		File.readlines(file).each do |line|
+			 add_player(Player.from_csv(line))
+		end
+	end
+
+	def save_scores(file="high_scores.txt")
+		File.open(file, 'w') do |file|
+			@players.each do |player|
+				file.puts create_high_score_entry(player)
+			end
+		end
+	end
+
+	def create_high_score_entry(player)
+		formatted_score = player.name.ljust(30, ".")
+		"#{formatted_score}#{player.score}"
+	end
+
 	def play(rounds)
 
 		treasures = TreasureTrove::TREASURES

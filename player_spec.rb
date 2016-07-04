@@ -76,7 +76,13 @@ describe Player do
 			@player.found_treasure(Treasure.new(:hammer, 50))
 
 			@player.points.should == 500
-		end
+	end
+
+	it "can be created from a CSV string" do
+	  	player = Player.from_csv("larry,150")
+	  	player.name.should == "Larry"
+	  	player.health.should == 150
+	end
 
 	context 'with health greater than 150' do
 		before do
