@@ -1,11 +1,14 @@
 require_relative 'game'
+require_relative 'clumsy_player'
 
 player1 = Player.new("bob")
 player2 = Player.new("larry", 60)
 player3 = Player.new("curly", 125)
+player4 = ClumsyPlayer.new("klutz", 105)
 
 knuckleheads = Game.new("Knuckleheads")
 knuckleheads.load_players(ARGV.shift || "players.csv")
+knuckleheads.add_player(player4)
 
 loop do 
 	puts "\nHow many rounds would you like to play?"
