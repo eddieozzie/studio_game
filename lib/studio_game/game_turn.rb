@@ -6,7 +6,7 @@ module GameTurn
 
 	def self.take_turn(player)
 
-		die = Die.new
+		die = StudioGame::Die.new
 
 		case die.roll 
 		when 1..2
@@ -17,7 +17,7 @@ module GameTurn
 			player.w00t
 		end
 
-		treasure = TreasureTrove.random
+		treasure = StudioGame::TreasureTrove.random
 
 		player.found_treasure(treasure)
 
