@@ -1,23 +1,25 @@
 require_relative 'player'
 require_relative 'treasure_trove'
 
-class ClumsyPlayer < Player
+module StudioGame
 
-	def found_treasure(treasure)
-    	super(Treasure.new(treasure.name, treasure.points/2.0))
-  	end
-  	
+  class ClumsyPlayer < Player
+
+  	def found_treasure(treasure)
+      	super(StudioGame::Treasure.new(treasure.name, treasure.points/2.0))
+    	end
+    	
+  end
 end
-
 if __FILE__ == $0
-  clumsy = ClumsyPlayer.new("klutz")  
+  clumsy = StudioGame::ClumsyPlayer.new("klutz")  
   
-  hammer = Treasure.new(:hammer, 50)
+  hammer = StudioGame::Treasure.new(:hammer, 50)
   clumsy.found_treasure(hammer)
   clumsy.found_treasure(hammer)
   clumsy.found_treasure(hammer)
   
-  crowbar = Treasure.new(:crowbar, 400)
+  crowbar = StudioGame::Treasure.new(:crowbar, 400)
   clumsy.found_treasure(crowbar)
   
   clumsy.each_found_treasure do |treasure|
